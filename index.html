@@ -105,7 +105,8 @@
             },
             "date": {
               "type": "string",
-              "title": "Date"
+              "title": "Date",
+              "description": "YYYY-MM-DD",
             }
           }
         }
@@ -331,7 +332,8 @@
             },
             "date": {
               "type": "string",
-              "title": "Date"
+              "title": "Date",
+              "description": "YYYY-MM-DD",
             }
           }
         }
@@ -465,59 +467,67 @@
         }
       },
       "results": {
-        "type": "array",
-        "title": "Results",
-        "items": {
-          "type": "object",
-          "properties": {
-            "full_results": {
-              "type": "object",
-              "title": "Full Results",
-              "properties": {
-                "title": {
-                  "type": "string",
-                  "title": "Title",
+      "type": "array",
+      "title": "Results",
+      "items": {
+        "type": "object",
+        "properties": {
+          "full_results": {
+            "type": "object",
+            "title": "Full Results",
+            "properties": {
+              "title": {
+                "type": "string",
+                "title": "Title",
                   "description": "Name of the platform where the full results can be found"
-                },
-                "url": {
-                  "type": "string",
-                  "title": "URL",
+              },
+              "url": {
+                "type": "string",
+                "title": "URL",
                   "description": "URL to the platform where the full results can be found"
-                }
               }
-            },
-            "scoring_table": {
-              "type": "array",
-              "title": "Scoring Table",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "language": {
-                    "type": "string",
-                    "title": "Language",
+            }
+          },
+          "scoring_table": {
+            "type": "array",
+            "title": "Scoring Table",
+            "items": {
+              "type": "object",
+              "properties": {
+                "language": {
+                  "type": "string",
+                  "title": "Language",
                     "description": "→ Language / Language ← / Language 1 ↔ Language 2"
-                  },
-                  "sentence": {
-                    "type": "string",
-                    "title": "Sentence",
+                },
+                "sentence": {
+                  "type": "string",
+                  "title": "Sentence",
                     "description": "Opening sentence about how the results were determined"
-                  },
-                  "language_pair": {
-                    "type": "string",
-                    "title": "Languauge Pair",
+                },
+                "evaluations": {
+                  "type": "array",
+                  "title": "Evaluations",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "language_pair": {
+                        "type": "string",
+                        "title": "Languauge Pair",
                     "description": "Languauge Pair Column"
-                  },
-                  "system": {
-                    "type": "string",
-                    "title": "System"
-                  },
-                  "average_score": {
-                    "type": "string",
-                    "title": "Average Score"
-                  },
-                  "average_z_score": {
-                    "type": "string",
-                    "title": "Average Z-Score"
+                    },
+                      "system": {
+                        "type": "string",
+                        "title": "System"
+                    },
+                      "average_score": {
+                        "type": "string",
+                        "title": "Average Score"
+                    },
+                      "average_z_score": {
+                        "type": "string",
+                        "title": "Average Z-Score"
+                    }
+                    }
                   }
                 }
               }
@@ -525,6 +535,7 @@
           }
         }
       }
+    }
     },
     "required": [
       "name",
